@@ -1,70 +1,136 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Physical Growth of Tribal People</title>
+    <title>Physical Growth of Tribal Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Global Styles */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef3f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8; /* Soft blue-gray background */
+            color: #333;
+            line-height: 1.6;
         }
 
+        /* Header and Navigation */
         header {
-            background: #314e89;
+            background: #004d40; /* Deep Teal */
             padding: 20px;
             color: white;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav {
-            background: #1e3361;
-            padding: 12px;
+            background: #00695c; /* Slightly lighter Teal */
+            padding: 10px 0;
             text-align: center;
         }
 
         nav a {
             color: white;
-            margin: 15px;
+            margin: 0 15px;
             text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
         }
 
-        nav a:hover {
-            color: #ffd700;
+        nav a:hover, nav a.active {
+            background-color: #009688; /* Bright Teal on hover/active */
+            color: #ffffff;
         }
 
+        /* Page Content */
         .page {
             display: none;
-            padding: 20px;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        footer {
-            background: #314e89;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            margin-top: 30px;
+        h2 {
+            color: #004d40;
+            border-bottom: 2px solid #009688;
+            padding-bottom: 10px;
+            margin-top: 0;
         }
 
-        /* Basic form styling */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        
+        /* Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0f2f1; /* Lightest Teal */
+            color: #004d40;
+        }
+
+        /* Forms */
         input, textarea {
-            width: 80%;
-            padding: 8px;
+            width: 100%;
+            max-width: 400px; /* Limiting form width */
+            padding: 10px;
             margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         button {
-            background: #1e3361;
+            background: #00695c;
             color: white;
             padding: 10px 20px;
             border: none;
             margin-top: 10px;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
         }
 
         button:hover {
-            background: #314e89;
+            background: #004d40;
+        }
+
+        /* Footer */
+        footer {
+            background: #004d40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        /* Image Placeholder Styling */
+        .img-placeholder {
+            text-align: center;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f8f8f8;
+            border: 1px dashed #ccc;
+            color: #666;
+            font-style: italic;
         }
 
     </style>
@@ -73,105 +139,166 @@
 <body onload="showPage('home')">
 
 <header>
-    <h1>Physical Growth of Tribal People</h1>
+    <h1>Physical Growth of Tribal Students</h1>
 </header>
 
-<nav>
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('factors')">Growth Factors</a>
-    <a onclick="showPage('nutrition')">Nutrition</a>
-    <a onclick="showPage('challenges')">Challenges</a>
-    <a onclick="showPage('contact')">Contact</a>
+<nav id="main-nav">
+    <a id="nav-home" onclick="showPage('home')">Home</a>
+    <a id="nav-factors" onclick="showPage('factors')">Growth Factors</a>
+    <a id="nav-nutrition" onclick="showPage('nutrition')">Nutrition</a>
+    <a id="nav-challenges" onclick="showPage('challenges')">Health Challenges</a>
+    <a id="nav-contact" onclick="showPage('contact')">Contact</a>
 </nav>
 
-<!-- HOME PAGE -->
 <div id="home" class="page">
-    <h2>Welcome</h2>
+    <h2>Welcome to the Tribal Growth Study</h2>
     <p>
-        The physical growth of tribal people is influenced by lifestyle, nutrition, 
-        environment, and cultural practices. This site explores the major factors.
+        The physical growth and nutritional status of tribal student populations are critical indicators of public health and socio-economic development. This site explores the major factors, data disparities, and challenges affecting these communities.
+    </p>
+    <div class="img-placeholder">
+        
+    </div>
+    <p>
+        Tribal communities often face unique environmental and socio-cultural barriers that lead to distinct anthropometric patterns compared to non-tribal or urban populations. Understanding these differences is key to designing targeted health interventions.
     </p>
 </div>
 
-<!-- PAGE 2: FACTORS -->
 <div id="factors" class="page">
     <h2>Factors Affecting Physical Growth</h2>
+    <p>Physical growth is a complex process influenced by a combination of genetics and external environment:</p>
     <ul>
-        <li>Genetic background</li>
-        <li>Nutrition and diet patterns</li>
-        <li>Daily physical activities</li>
-        <li>Environmental conditions</li>
-        <li>Healthcare availability</li>
+        <li>*Genetic Background:* Natural variations exist between different tribal groups and populations.</li>
+        <li>*Nutrition and Diet Patterns:* The primary determinant; access to balanced macro and micronutrients.</li>
+        <li>*Daily Physical Activities:* High levels of physical labor can affect energy balance and skeletal development.</li>
+        <li>*Environmental Conditions:* Clean water access, sanitation, and exposure to endemic diseases (e.g., malaria).</li>
+        <li>*Healthcare Availability:* Access to timely maternal, infant, and child health services.</li>
     </ul>
+
+    <h3>The Nature vs. Nurture Balance</h3>
+    <p>While genetics play a role, research overwhelmingly points to *environmental and nutritional deprivation* as the main reason for lower average growth metrics.</p>
 </div>
 
-<!-- PAGE 3: NUTRITION -->
 <div id="nutrition" class="page">
-    <h2>Nutrition in Tribal Communities</h2>
-    <p>Common foods found in tribal diets:</p>
-    <ul>
-        <li>Millets and coarse grains</li>
-        <li>Forest vegetables and edible roots</li>
-        <li>Local fruits and berries</li>
-        <li>Meat, fish, and natural protein sources</li>
-        <li>Traditional herbal drinks</li>
-    </ul>
+    <h2>Nutrition and Anthropometric Data</h2>
+    <p>While traditional diets are often locally sourced, poverty and food insecurity frequently lead to caloric or protein deficiencies, resulting in high rates of malnutrition.</p>
+    
+    <h3>Key Growth Indicators</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Indicator</th>
+                <th>Definition</th>
+                <th>Significance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Stunting (Height-for-Age)</td>
+                <td>Low height relative to age.</td>
+                <td>Indicates *chronic* or long-term under-nutrition.</td>
+            </tr>
+            <tr>
+                <td>Wasting (Weight-for-Height)</td>
+                <td>Low weight relative to height.</td>
+                <td>Indicates *acute* or recent severe nutritional loss.</td>
+            </tr>
+            <tr>
+                <td>Underweight (Weight-for-Age)</td>
+                <td>Low weight relative to age.</td>
+                <td>Composite measure of both chronic and acute issues.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="img-placeholder">
+        
+    </div>
+
+    <h3>Traditional vs. Modern Diets</h3>
+    <p>Traditional diets often include nutrient-dense millets and forest produce, but reliance on these sources can be disrupted by habitat loss or market forces, leading to less diverse and lower-quality diets.</p>
 </div>
 
-<!-- PAGE 4: CHALLENGES -->
 <div id="challenges" class="page">
-    <h2>Challenges</h2>
+    <h2>Socio-Economic and Health Challenges</h2>
+    <p>The challenges facing tribal students' growth are systemic, extending beyond the kitchen to the entire community infrastructure.</p>
+    
     <ul>
-        <li>Poor access to healthcare</li>
-        <li>Malnutrition in some communities</li>
-        <li>Lack of sanitation and clean water</li>
-        <li>Poverty and isolation</li>
-        <li>High physical labor from a young age</li>
+        <li>*Poor Access to Healthcare:* Geographic isolation and high travel costs prevent access to preventive and curative care.</li>
+        <li>*Sanitation and Water Issues:* Lack of clean drinking water and proper sanitation leads to recurrent *gastrointestinal infections*, which prevent nutrient absorption and halt growth. </li>
+        <li>*Poverty and Isolation:* Limited economic opportunities perpetuate cycles of malnutrition across generations.</li>
+        <li>*High Physical Labor:* Children participating in heavy physical labor from a young age divert vital energy and nutrients away from growth.</li>
     </ul>
+
+    <h3>The Malnutrition Cycle</h3>
+    <p>Maternal malnutrition leads to low birth weight, which predicts poor growth throughout childhood and adolescence, perpetuating the cycle into the next generation.</p>
 </div>
 
-<!-- PAGE 5: CONTACT -->
 <div id="contact" class="page">
     <h2>Contact Us</h2>
-    <p>Send your message below:</p>
+    <p>Thank you for your interest. Please use the form below to send us your message or inquiry.</p>
 
-    <label>Name:</label><br>
-    <input type="text" id="name"><br><br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" placeholder="Enter your full name"><br>
 
-    <label>Email:</label><br>
-    <input type="email" id="email"><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" placeholder="e.g., yourname@example.com"><br>
 
-    <label>Message:</label><br>
-    <textarea id="msg" rows="4"></textarea><br><br>
+    <label for="msg">Message:</label><br>
+    <textarea id="msg" rows="6" placeholder="Type your message here..."></textarea><br>
 
-    <button onclick="sendMessage()">Submit</button>
+    <button onclick="sendMessage()">Submit Message</button>
+    
+    <p style="margin-top: 20px; font-style: italic;">Note: This is a static website. The "Submit" button displays an alert but does not send an actual email.</p>
 </div>
 
 <footer>
-    &copy; 2025 Tribal Growth Study Project
+    <p>&copy; 2025 Tribal Growth Study Awareness Project. All Rights Reserved.</p>
 </footer>
 
 <script>
-    // Function to switch between pages
+    // Function to switch between pages and highlight the active link
     function showPage(pageID) {
         let pages = document.getElementsByClassName("page");
-
-        // hide all pages
+        let navLinks = document.getElementById("main-nav").getElementsByTagName("a");
+        
+        // Hide all pages
         for (let i = 0; i < pages.length; i++) {
             pages[i].style.display = "none";
         }
 
-        // show selected page
-        document.getElementById(pageID).style.display = "block";
+        // Deactivate all navigation links
+        for (let i = 0; i < navLinks.length; i++) {
+            navLinks[i].classList.remove("active");
+        }
+        
+        // Show selected page
+        let activePage = document.getElementById(pageID);
+        if (activePage) {
+            activePage.style.display = "block";
+        }
+        
+        // Activate the corresponding navigation link
+        let activeLink = document.getElementById("nav-" + pageID);
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
     }
 
-    // Basic form message
+    // Enhanced form message function
     function sendMessage() {
-        let name = document.getElementById("name").value;
-        if (name.trim() === "") {
-            alert("Please enter your name before submitting!");
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("msg").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill out all fields before submitting.");
         } else {
-            alert("Thank you " + name + "! Your message has been sent.");
+            alert("Thank you, " + name + "! Your message has been received (statically). We appreciate your interest.");
+            
+            // Optionally clear the form after 'sending'
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("msg").value = "";
         }
     }
 </script>
