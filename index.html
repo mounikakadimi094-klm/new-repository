@@ -1,42 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html>
 <head>
-   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Growth of Tribal People</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef3f7;
+        }
 
-    <title>🏠 Home: Tribal Student Growth Study</title>
-    <link rel="stylesheet" href="style.css">
+        header {
+            background: #314e89;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background: #1e3361;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .page {
+            display: none;
+            padding: 20px;
+        }
+
+        footer {
+            background: #314e89;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Basic form styling */
+        input, textarea {
+            width: 80%;
+            padding: 8px;
+            margin-top: 8px;
+        }
+
+        button {
+            background: #1e3361;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #314e89;
+        }
+
+    </style>
 </head>
-<body>
 
-    <header>
-        <h1>Physical Growth of Tribal Students</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="data.html">Data & Metrics</a></li>
-                <li><a href="factors.html">Influencing Factors</a></li>
-                <li><a href="interventions.html">Interventions</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body onload="showPage('home')">
 
-    <div class="container">
-        <h2>Unpacking the Challenges of Health and Nutrition</h2>
-        <p>This website serves as an informational resource exploring the critical topic of physical growth patterns among tribal student populations, primarily in India.</p>
-        
-        <h3>Our Mission</h3>
-        <p>To highlight the disparities in anthropometric indices (height, weight, BMI) and investigate the complex interplay of socio-economic, environmental, and cultural factors that affect the well-being and growth trajectory of these communities.</p>
+<header>
+    <h1>Physical Growth of Tribal People</h1>
+</header>
 
-        <h3>Did You Know?</h3>
-        <p>Studies often show a higher prevalence of *stunting* and *underweight* among tribal students compared to non-tribal peers, indicating a profound impact of chronic nutritional and health challenges.</p>
+<nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('factors')">Growth Factors</a>
+    <a onclick="showPage('nutrition')">Nutrition</a>
+    <a onclick="showPage('challenges')">Challenges</a>
+    <a onclick="showPage('contact')">Contact</a>
+</nav>
 
-        <img src="placeholder-graph.png" alt="Placeholder image for data visualization" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
-    </div>
+<!-- HOME PAGE -->
+<div id="home" class="page">
+    <h2>Welcome</h2>
+    <p>
+        The physical growth of tribal people is influenced by lifestyle, nutrition, 
+        environment, and cultural practices. This site explores the major factors.
+    </p>
+</div>
 
-    <footer>
-        <p>&copy; 2025 Tribal Growth Study Awareness Project. All rights reserved. Data gathered from public research sources.</p>
-    </footer>
+<!-- PAGE 2: FACTORS -->
+<div id="factors" class="page">
+    <h2>Factors Affecting Physical Growth</h2>
+    <ul>
+        <li>Genetic background</li>
+        <li>Nutrition and diet patterns</li>
+        <li>Daily physical activities</li>
+        <li>Environmental conditions</li>
+        <li>Healthcare availability</li>
+    </ul>
+</div>
+
+<!-- PAGE 3: NUTRITION -->
+<div id="nutrition" class="page">
+    <h2>Nutrition in Tribal Communities</h2>
+    <p>Common foods found in tribal diets:</p>
+    <ul>
+        <li>Millets and coarse grains</li>
+        <li>Forest vegetables and edible roots</li>
+        <li>Local fruits and berries</li>
+        <li>Meat, fish, and natural protein sources</li>
+        <li>Traditional herbal drinks</li>
+    </ul>
+</div>
+
+<!-- PAGE 4: CHALLENGES -->
+<div id="challenges" class="page">
+    <h2>Challenges</h2>
+    <ul>
+        <li>Poor access to healthcare</li>
+        <li>Malnutrition in some communities</li>
+        <li>Lack of sanitation and clean water</li>
+        <li>Poverty and isolation</li>
+        <li>High physical labor from a young age</li>
+    </ul>
+</div>
+
+<!-- PAGE 5: CONTACT -->
+<div id="contact" class="page">
+    <h2>Contact Us</h2>
+    <p>Send your message below:</p>
+
+    <label>Name:</label><br>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email"><br><br>
+
+    <label>Message:</label><br>
+    <textarea id="msg" rows="4"></textarea><br><br>
+
+    <button onclick="sendMessage()">Submit</button>
+</div>
+
+<footer>
+    &copy; 2025 Tribal Growth Study Project
+</footer>
+
+<script>
+    // Function to switch between pages
+    function showPage(pageID) {
+        let pages = document.getElementsByClassName("page");
+
+        // hide all pages
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].style.display = "none";
+        }
+
+        // show selected page
+        document.getElementById(pageID).style.display = "block";
+    }
+
+    // Basic form message
+    function sendMessage() {
+        let name = document.getElementById("name").value;
+        if (name.trim() === "") {
+            alert("Please enter your name before submitting!");
+        } else {
+            alert("Thank you " + name + "! Your message has been sent.");
+        }
+    }
+</script>
+
 </body>
 </html>
